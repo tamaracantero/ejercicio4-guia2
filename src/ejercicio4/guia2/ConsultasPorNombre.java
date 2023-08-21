@@ -37,6 +37,8 @@ public class ConsultasPorNombre extends javax.swing.JInternalFrame {
         TablaProductos = new javax.swing.JTable();
 
         setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jLabel1.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Yellow"));
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N

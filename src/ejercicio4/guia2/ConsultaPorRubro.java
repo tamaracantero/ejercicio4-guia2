@@ -38,6 +38,8 @@ public class ConsultaPorRubro extends javax.swing.JInternalFrame {
         jTProductos = new javax.swing.JTable();
 
         setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 153));

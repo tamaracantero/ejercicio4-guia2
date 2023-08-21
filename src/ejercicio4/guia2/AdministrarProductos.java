@@ -30,7 +30,7 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        botonNuevo = new javax.swing.JButton();
         guardar = new javax.swing.JButton();
         botonEliminar = new javax.swing.JButton();
         stock = new javax.swing.JTextField();
@@ -45,8 +45,9 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
         botonBuscar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        botonSalir = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        botonSalir = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 204, 204));
         setForeground(new java.awt.Color(0, 204, 204));
@@ -54,8 +55,15 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("Administracion De Productos");
+        setAlignmentX(100.0F);
+        setAlignmentY(100.0F);
 
-        jButton2.setText("Nuevo");
+        botonNuevo.setText("Nuevo");
+        botonNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonNuevoActionPerformed(evt);
+            }
+        });
 
         guardar.setText("Guardar");
         guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -99,37 +107,18 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("ADMINISTRAR PRODUCTOS");
 
-        botonSalir.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
-        botonSalir.setForeground(new java.awt.Color(255, 0, 0));
-        botonSalir.setText("x");
-        botonSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSalirActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("salir");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(guardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonEliminar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(102, 102, 102)
+                .addComponent(botonNuevo)
+                .addGap(18, 18, 18)
+                .addComponent(guardar)
+                .addGap(18, 18, 18)
+                .addComponent(botonEliminar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,26 +138,21 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
                     .addComponent(categoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(precio)
                     .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(15, 15, 15))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonBuscar)
-                            .addComponent(jLabel2)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel7)))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonBuscar)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -187,23 +171,64 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
                     .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(botonNuevo)
                     .addComponent(guardar)
                     .addComponent(botonEliminar))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        jLabel7.setText("salir");
+
+        botonSalir.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
+        botonSalir.setForeground(new java.awt.Color(255, 0, 0));
+        botonSalir.setText("x");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -242,22 +267,18 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this,"EL INVENTARIO QUISO INGRESAR A UN INDICE INEXISTENTE");    
         }catch(NullPointerException e){
             JOptionPane.showMessageDialog(this, "EL CODIGO INGRESADO NO TIENE PRODUCTO VINCULADO");
-            
-        
-        }catch(Exception E){
-            JOptionPane.showInternalMessageDialog(this,"HA OCURRIDO UN ERROR INESPERADO");
-        
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "En todos los campos debe ingresar al menos 1 valor y en los campos Codigo, Precio y Stock solo debe ingresar numeros");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "ocurrio un error inesperado");
         }
     }//GEN-LAST:event_botonBuscarActionPerformed
-
-    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarMouseClicked
         try{
             if(!MenuDeTodoSA.inventario.isEmpty()){
                 MenuDeTodoSA.inventario.remove(new Producto((Integer.parseInt(codigo.getText())), "", 0, 0, null));
+                JOptionPane.showMessageDialog(this, "Producto Eliminado Correctamente");
                 limpiarCampos();
             }
         }catch(IndexOutOfBoundsException e){
@@ -265,8 +286,10 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
         }catch(NullPointerException e){
             JOptionPane.showMessageDialog(this, "EL CONJUNTO QUISO ENTRAR A UN INDICE U OBJETO NULO");
             
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "En todos los campos debe ingresar al menos 1 valor y en los campos Codigo, Precio y Stock solo debe ingresar numeros");
         }catch(Exception e){
-            JOptionPane.showInternalMessageDialog(this,"HA OCURRIDO UN ERROR INESPERADO");
+            JOptionPane.showMessageDialog(this, "ocurrio un error inesperado");
         }
     }//GEN-LAST:event_botonEliminarMouseClicked
 
@@ -279,21 +302,64 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
                     p.setCategoria((Categorias)categoria.getSelectedItem());
                     p.setPrecio(Double.parseDouble(precio.getText()));
                     p.setStock(Integer.parseInt(stock.getText()));
-                }                
+                    JOptionPane.showMessageDialog(this, "Producto Actualizado Correctamente");
+                    codigo.setText("");
+                    descripcion.setText("");
+                    stock.setText("");
+                    categoria.setSelectedIndex(1);
+                    precio.setText("");
+                    break;
+                }
+                
             }
-        }catch(Exception e){}
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "En todos los campos debe ingresar al menos 1 valor y en los campos Codigo, Precio y Stock solo debe ingresar numeros");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "ocurrio un error inesperado");
+        }
     }//GEN-LAST:event_guardarActionPerformed
+
+    private void botonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoActionPerformed
+        boolean flag=false;
+        try{
+            for (Producto p : MenuDeTodoSA.inventario) {
+                if(p.getCodigo()==Integer.parseInt(codigo.getText())){
+                    flag=true;
+                    break;
+                }
+            }
+           if(flag){
+               JOptionPane.showMessageDialog(this, "El codigo de su producto ya existe en el inventario, Debe registrar el nuevo producto con otro codigo");
+           }else{
+               MenuDeTodoSA.inventario.add(new Producto(Integer.parseInt(codigo.getText()), descripcion.getText(), Double.parseDouble(precio.getText()), Integer.parseInt(stock.getText()), (Categorias)categoria.getSelectedItem()));
+               JOptionPane.showMessageDialog(this, "Producto Agregado Correctamente");
+                    codigo.setText("");
+                    descripcion.setText("");
+                    stock.setText("");
+                    categoria.setSelectedIndex(1);
+                    precio.setText("");
+           }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "En todos los campos debe ingresar al menos 1 valor y en los campos Codigo, Precio y Stock solo debe ingresar numeros");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "ocurrio un error inesperado");
+        }
+    }//GEN-LAST:event_botonNuevoActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonEliminar;
+    private javax.swing.JButton botonNuevo;
     private javax.swing.JButton botonSalir;
     private javax.swing.JComboBox<Categorias> categoria;
     private javax.swing.JTextField codigo;
     private javax.swing.JTextField descripcion;
     private javax.swing.JButton guardar;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -302,6 +368,7 @@ public class AdministrarProductos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField precio;
     private javax.swing.JTextField stock;
     // End of variables declaration//GEN-END:variables
